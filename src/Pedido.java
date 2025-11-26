@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Pedido {
     
-    private Cliente cliente; //A
-    private List<Producto> productos;
+    private Cliente cliente; //Asociación Pedido - Cliente
+    private List<Producto> productos; //Composición Pedido - Producto
     private LocalDate fecha;
 
     //Constructor
@@ -42,10 +42,12 @@ public class Pedido {
     }
 
     public void mostrarResumen() {
-    System.out.println("----- RESUMEN DEL PEDIDO -----");
+    System.out.println("\n----- RESUMEN DEL PEDIDO -----");
+    System.out.println("ID: " + cliente.getId());
     System.out.println("Cliente: " + cliente.getNombre());
-    System.out.println("Correo: " + cliente.getCorreo());
     System.out.println("Dirección: " + cliente.getDireccion());
+    System.out.println("DNI: " + cliente.getDNI());
+    System.out.println("Correo: " + cliente.getCorreo());
     System.out.println("Fecha: " + fecha);
 
     System.out.println("\nProductos comprados:");
