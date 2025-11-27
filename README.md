@@ -1,18 +1,44 @@
+# Sistema de Gestión de Pedidos
+
+Proyecto desarrollado para la asignatura de Programación Orientada a Objetos.  
+El objetivo es implementar un sistema capaz de gestionar clientes, productos y pedidos, aplicando herencia, agregación/asociación y encapsulación, además de representar el diseño mediante diagramas UML.
+
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+1. Clonar o descargar el repositorio.
+2. Abrir el proyecto en un IDE compatible con Java (Eclipse, IntelliJ, NetBeans o VS Code con extensión Java).
+3. Asegurarse de que el proyecto contiene la estructura de paquetes y los archivos `.java`.
+4. Ejecutar la clase `Main`:
+   - Botón derecho → **Run**
+   - o ejecutar desde la consola con:
+     ```sh
+     javac *.java
+     java Main
+     ```
 
 ## Folder Structure
 
-The workspace contains two folders by default, where:
+/src
+├── Producto.java
+├── ProductoFisico.java
+├── ProductoDigital.java
+├── Cliente.java
+├── Pedido.java
+└── Main.java
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+/uml
+├── diagrama_inicial.png
+└── diagrama_ingenieria_inversa.png
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+README.md
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Resumen Funcionamiento
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+ **Producto** es la clase base abstracta con atributos comunes: `nombre` y `precio`.
+- **ProductoFisico** y **ProductoDigital** extienden a Producto implementando su propia lógica de `calcularPrecioFinal()`.
+- **Cliente** almacena la información básica de cada comprador.
+- **Pedido** contiene:
+  - un cliente asociado  
+  - una lista de productos  
+  - métodos para agregar productos, calcular total y mostrar un resumen del pedido.
+- La clase **Main** crea clientes, productos, pedidos y muestra el funcionamiento completo del sistema.
