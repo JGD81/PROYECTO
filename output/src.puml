@@ -15,16 +15,6 @@ class Cliente {
   -correo: String
   --
   +Cliente(id: int, nombre: String, direccion: String, DNI: String, correo: String)
-  +getId(): int
-  +getNombre(): String
-  +getDireccion(): String
-  +getDNI(): String
-  +getCorreo(): String
-  +setId(id: int): void
-  +setNombre(nombre: String): void
-  +setDireccion(direccion: String): void
-  +setDNI(dNI: String): void
-  +setCorreo(correo: String): void
 }
 
 class Main {
@@ -37,9 +27,6 @@ class Pedido {
   -fecha: LocalDate
   --
   +Pedido(cliente: Cliente)
-  +getCliente(): Cliente
-  +getProductos(): List<Producto>
-  +getFecha(): LocalDate
   +agregarProducto(p: Producto): void
   +calcularTotal(): double
   +mostrarResumen(): void
@@ -51,10 +38,6 @@ abstract class Producto {
   --
   +Producto()
   +Producto(nombre: String, precio: double)
-  +getNombre(): String
-  +getPrecio(): double
-  +setNombre(nombre: String): void
-  +setPrecio(precio: double): void
   +calcularPrecioFinal(): double
 }
 
@@ -62,8 +45,6 @@ class ProductoDigital {
   -tamanioDescarga: double
   --
   +ProductoDigital(nombre: String, precio: double, tamanioDescarga: double)
-  +getTamanioDescarga(): double
-  +setTamanioDescarga(tamanioDescarga: double): void
   +calcularPrecioFinal(): double
 }
 
@@ -71,8 +52,6 @@ class ProductoFisico {
   -costeEnvio: double
   --
   +ProductoFisico(nombre: String, precio: double, costeEnvio: double)
-  +getCosteEnvio(): double
-  +setCosteEnvio(costeEnvio: double): void
   +calcularPrecioFinal(): double
 }
 
